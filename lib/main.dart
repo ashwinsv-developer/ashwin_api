@@ -4,8 +4,6 @@ import 'dart:io';
 import 'package:ashwin_api/widgets/bound_widget.dart';
 import 'package:ashwin_api/widgets/leg_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import 'models/response_model.dart';
 import 'network/http_network.dart';
 
@@ -22,12 +20,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Api Test'),
     );
   }
 }
@@ -63,9 +62,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
       return Scaffold(
       appBar: AppBar(
+
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
          title: Text(widget.title),
       ),
+
       body: Container(
         padding: EdgeInsets.only(left: 16,right: 16),
         child:  routesData!= null?
